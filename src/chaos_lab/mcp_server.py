@@ -6,7 +6,7 @@ deterministic and tested. It never injects a fault.
 
     python -m chaos_lab.mcp_server examples/resources.json
 
-``mcp`` is an optional dependency (pip install "agentic-chaos[mcp]").
+``mcp`` is an optional dependency (pip install "agentic-chaos-readiness[mcp]").
 """
 from __future__ import annotations
 
@@ -23,9 +23,9 @@ except ImportError:  # pragma: no cover
 
 def build_server(resources_path: str) -> FastMCP:
     if FastMCP is None:  # pragma: no cover
-        raise SystemExit('The "mcp" package is required. Install: pip install "agentic-chaos[mcp]"')
+        raise SystemExit('The "mcp" package is required. Install: pip install "agentic-chaos-readiness[mcp]"')
 
-    mcp = FastMCP("agentic-chaos")
+    mcp = FastMCP("agentic-chaos-readiness")
 
     def _load():
         return loader.load(resources_path)

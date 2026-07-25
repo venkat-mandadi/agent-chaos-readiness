@@ -1,4 +1,4 @@
-# agentic-chaos
+# agentic-chaos-readiness
 
 **Resilience scoring, chaos safety gating, and LitmusChaos experiment generation
 for GKE.** It scores how well a workload would survive a fault, decides *go/no-go*
@@ -8,7 +8,7 @@ steady-state probe and auto-abort — and lays out a safest-first game-day plan.
 experiment in a controlled window.
 
 <p>
-  <img alt="CI" src="https://github.com/venkat-mandadi/agentic-chaos/actions/workflows/ci.yml/badge.svg">
+  <img alt="CI" src="https://github.com/venkat-mandadi/agentic-chaos-readiness/actions/workflows/ci.yml/badge.svg">
   <img alt="Python" src="https://img.shields.io/badge/python-3.10%2B-blue">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-green">
 </p>
@@ -71,8 +71,8 @@ plan doubles as a hardening backlog.
 Runs offline against a bundled sample fleet — no cluster needed.
 
 ```bash
-git clone https://github.com/venkat-mandadi/agentic-chaos
-cd agentic-chaos
+git clone https://github.com/venkat-mandadi/agentic-chaos-readiness
+cd agentic-chaos-readiness
 pip install -e ".[dev]"
 
 python examples/run_plan.py                                   # plan + a gate + a manifest
