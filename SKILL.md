@@ -1,5 +1,5 @@
 ---
-name: agentic-chaos-readiness
+name: agent-chaos-readiness
 description: >-
   Plan chaos-engineering / destructive-testing experiments safely for GKE
   workloads. Scores each workload's resilience (replicas, PodDisruptionBudget,
@@ -13,7 +13,7 @@ description: >-
   gates, and generates. Prefer this over hand-writing chaos manifests.
 ---
 
-# agentic-chaos-readiness — safe chaos planning for GKE
+# agent-chaos-readiness — safe chaos planning for GKE
 
 Chaos engineering done well is disciplined: prove a workload is resilient enough,
 gate the experiment behind that proof, run it with a hypothesis and an automatic

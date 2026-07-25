@@ -3,7 +3,7 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "agentic-chaos-readiness"
+name = "agent-chaos-readiness"
 version = "0.1.0"
 description = "Resilience readiness scoring, chaos safety gating, and LitmusChaos experiment generation for GKE."
 readme = "README.md"

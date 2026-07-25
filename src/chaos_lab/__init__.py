@@ -1,4 +1,4 @@
-"""agentic-chaos-readiness — resilience readiness scoring, chaos safety gating, and
+"""agent-chaos-readiness — resilience readiness scoring, chaos safety gating, and
 LitmusChaos experiment generation for GKE workloads.
 
 Scores how well a workload would survive a fault, gates each experiment behind
