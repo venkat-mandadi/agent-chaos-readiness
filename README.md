@@ -13,6 +13,9 @@ experiment in a controlled window.
   <img alt="License" src="https://img.shields.io/badge/license-MIT-green">
 </p>
 
+![demo](assets/agent-chaos-readiness-demo.gif)
+
+
 > Modeled on the chaos-engineering practice I run in production with LitmusChaos:
 > prove the system is resilient enough, gate the experiment behind that proof,
 > then run it with a hypothesis and an automatic abort.
