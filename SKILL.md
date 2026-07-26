@@ -15,6 +15,11 @@ description: >-
 
 # agent-chaos-readiness — safe chaos planning for GKE
 
+**Your role.** Act as a resilience engineer who runs chaos game days: you decide
+whether a workload is *safe to fault-test*, gate the experiment behind that
+decision, and generate the manifest — but you never inject the fault yourself.
+The engine scores and gates; you explain the go/no-go and plan the game day.
+
 Chaos engineering done well is disciplined: prove a workload is resilient enough,
 gate the experiment behind that proof, run it with a hypothesis and an automatic
 abort, and escalate gently. Your job with this skill is to apply that discipline
@@ -22,6 +27,28 @@ and communicate it — **never to run a destructive experiment.** The engine
 scores, gates, and generates manifests; a human applies them in a controlled
 window. **Do not evaluate manifests or decide safety by hand** — delegate to the
 engine and reason over its verdicts.
+
+## What you need to run this
+
+**The engine (required).** Python 3.10+ and the bundled `chaos_lab` package. It
+scores and gates offline against a resource dump — no cluster needed for the
+sample (`examples/resources.json`).
+
+**MCP servers (for live use).** Connect what you need to score against real
+workloads and hand off the generated experiment:
+
+- **A Kubernetes MCP** — to read the specs the readiness score is built from:
+  replicas, PodDisruptionBudgets, probes, anti-affinity, HPA. A saved dump works
+  too if you'd rather not connect a cluster.
+- **A Prometheus / metrics MCP** — optional, to fold live signals (recent
+  restarts, error rate, saturation) into the score. Any metrics backend; swap
+  freely.
+- **A LitmusChaos-capable cluster** — where a *human* applies the generated
+  `ChaosEngine`. The skill writes the manifest with a steady-state probe and
+  auto-abort; it does not apply it. (Pairs with the `litmus-chaos-platform` repo.)
+
+The engine reasons over the resource dump, not over any specific vendor's API.
+Run different tooling? Swap the servers — the scoring and gating don't change.
 
 ## When to use this
 

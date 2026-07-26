@@ -17,11 +17,11 @@ experiment in a controlled window.
 > prove the system is resilient enough, gate the experiment behind that proof,
 > then run it with a hypothesis and an automatic abort.
 
-**Two layers, on purpose.** A thin Claude **skill** ([`SKILL.md`](SKILL.md))
-orchestrates — score the fleet, gate a proposed experiment, plan a game day,
-generate a manifest. A Python **engine** (`src/chaos_lab/`) does the deterministic
-scoring and safety logic. The agent spends its tokens on judgment, not on parsing
-manifests.
+**Skill up front, engine underneath.** A thin Claude **skill**
+([`SKILL.md`](SKILL.md)) orchestrates — score the fleet, gate a proposed
+experiment, plan a game day, generate a manifest. The scoring and safety logic
+sit in a Python **engine** (`src/chaos_lab/`), so the go/no-go decision is
+deterministic and the model's job is to explain it, not to re-derive it.
 
 ---
 
